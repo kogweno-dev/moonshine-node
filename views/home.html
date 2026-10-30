@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block navclass %}nav-over{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <img class="hero-bg" src="/static/images/red-aisle.jpg" alt="" fetchpriority="high">
+  <div class="wrap hero-in">
+    <p class="hero-note">Event planning, tents, decor and catering in Nakuru</p>
+    <h1>Full-service event planning that lets you enjoy your own day</h1>
+    <p class="lead">We plan, style, cater and run weddings, corporate functions and family celebrations across Nakuru and Kenya. One team, one quotation, one phone number.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="#contact">Get a free quote</a>
+      <a class="btn btn-line" href="#gallery">See our work</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap quickbar-wrap">
+  <form class="quickbar" method="get" action="/#contact">
+    <p class="qb-title">Start planning in a minute</p>
+    <div class="qb-field"><label for="qb-type">Event</label>
+      <select id="qb-type" name="event_type">{% for key, label in event_types %}<option value="{{ key }}">{{ label }}</option>{% endfor %}</select></div>
+    <div class="qb-field"><label for="qb-date">Date</label><input id="qb-date" type="date" name="event_date"></div>
+    <div class="qb-field"><label for="qb-guests">Guests</label><input id="qb-guests" type="number" min="1" name="guests" placeholder="e.g. 200"></div>
+    <button class="btn btn-navy" type="submit">Request a quote</button>
+  </form>
+</div>
+
+<section id="about" class="section">
+  <div class="wrap about">
+    <div class="about-media">
+      <img src="/static/images/teal-tent.jpg" alt="Tent draped in teal and gold with round tables set for guests" loading="lazy">
+    </div>
+    <div class="about-copy">
+      <h2>Built in Nakuru, trusted by hosts across the Rift Valley</h2>
+      <p>Moonshine Events is a full-service planning, tents, decor and catering company. We were founded on a simple belief: a host should be a guest at their own celebration.</p>
+      <p>Whether it is a garden wedding in Njoro, a county function in Nakuru town or a dignified celebration of life, we take the whole load. Site visits, budgeting, draping, seating, flowers, food, sound and same-day teardown are all handled by one team.</p>
+      <blockquote class="founder">
+        <p>I treat every event as a day somebody will remember for the rest of their life, so we plan it like it is our own.</p>
+        <footer>{{ biz.founder }}, Founder and Lead Planner</footer>
+      </blockquote>
+      <ul class="facts">
+        <li><strong>250+</strong><span>events delivered</span></li>
+        <li><strong>500+</strong><span>guests seated at our largest events</span></li>
+        <li><strong>10+</strong><span>years in the business</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head">
+      <h2>Everything your event needs, under one roof</h2>
+      <p>Book the full package or only the parts you need. Every service can be quoted on its own or bundled into a single budget.</p>
+    </header>
+    <div class="tiles">
+      {% for s in services %}
+      <a class="tile" href="{{ s.link }}">
+        <img src="/static/{{ s.image }}" alt="" loading="lazy">
+        <div class="tile-body">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.summary }}</p>
+          <span class="tile-cta">{{ s.cta_label }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="catering" class="section section-dark">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-copy">
+        <h2>Catering that feeds every guest well</h2>
+        <p>Our own kitchen and trained waiting staff handle the food, the drinks and the service, so nobody at your event is left waiting or wondering. We cook Kenyan, continental and nyama choma menus for forty guests or a thousand.</p>
+        <ul class="ticks">
+          <li>Buffet, plated or cocktail service</li>
+          <li>Crockery, cutlery and glassware included</li>
+          <li>Cake table, soft drinks, mocktails and bar setup</li>
+          <li>We coordinate with your caterer if you already have one</li>
+        </ul>
+        <a class="btn btn-gold" href="/catering/">View menus and prices</a>
+      </div>
+      <img class="feature-img" src="/static/images/kente-table.jpg" alt="Table set with woven mats, gold cutlery and a kente runner" loading="lazy">
+    </div>
+    <div class="pkg-grid">
+      {% for p in packages %}
+      <article class="pkg {% if p.is_featured %}pkg-featured{% endif %}">
+        {% if p.is_featured %}<span class="tag">Most booked</span>{% endif %}
+        <h3>{{ p.name }}</h3>
+        <p class="pkg-tag">{{ p.tagline }}</p>
+        <p class="price"><small>from KSh</small> {{ p.price_per_guest|money }} <small>per guest</small></p>
+        <p class="min">Minimum {{ p.min_guests }} guests</p>
+        <ul class="ticks">{% for i in p.top_includes %}<li>{{ i }}</li>{% endfor %}</ul>
+        <a class="btn {% if p.is_featured %}btn-gold{% else %}btn-line{% endif %}" href="/catering/?package={{ p.id }}#book">Choose {{ p.name }}</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section">
+  <div class="wrap">
+    <header class="sec-head"><h2>How it works, from first call to final clean-up</h2><p>Simple, predictable and written down, so you always know what happens next.</p></header>
+    <ol class="timeline">
+      <li><h3>Free consultation</h3><p>Call, WhatsApp or visit us. We listen to the vision, the date and the honest budget.</p></li>
+      <li><h3>Concept and quotation</h3><p>You receive a colour scheme and an itemised quote, usually within 48 hours.</p></li>
+      <li><h3>Planning and setup</h3><p>We visit the site, lock the suppliers, build a run-sheet and set up ahead of time.</p></li>
+      <li><h3>Event day and teardown</h3><p>Our coordinator runs the programme while you host. We clear the site the same day.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="why" class="section section-tint">
+  <div class="wrap why">
+    <div class="why-head">
+      <h2>Why hosts keep calling us back</h2>
+      <p>We keep our promises small and specific, then keep them.</p>
+    </div>
+    <dl class="why-list">
+      <div><dt>One team, one quotation</dt><dd>Tents, decor, food, sound and staff under a single contract.</dd></div>
+      <div><dt>On time, every time</dt><dd>Setup happens the day before wherever the venue allows.</dd></div>
+      <div><dt>Our own equipment</dt><dd>Tents, chairs, tables, carpets and drapes are in-house, which keeps your costs down.</dd></div>
+      <div><dt>Local knowledge</dt><dd>We know the venues and back roads of Nakuru, Naivasha, Njoro and Gilgil.</dd></div>
+      <div><dt>Budgets that hold</dt><dd>An itemised quote up front and a straight answer on what any change will cost.</dd></div>
+      <div><dt>Styling that photographs well</dt><dd>Colour, fabric and lighting chosen with the camera in mind.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="wrap">
+    <header class="sec-head"><h2>Recent events</h2><p>Select a photo to view it full size.</p></header>
+    <div class="filters" role="group" aria-label="Filter gallery">
+      <button class="chip is-on" data-filter="all">All work</button>
+      {% for key, label in gallery_categories %}<button class="chip" data-filter="{{ key }}">{{ label }}</button>{% endfor %}
+    </div>
+    <div class="gallery">
+      {% for g in gallery %}
+      <figure class="g-item" data-cat="{{ g.category }}">
+        <button class="g-open" data-full="/static/{{ g.image }}" data-cap="{{ g.title }}. {{ g.caption }}" aria-label="View {{ g.title }}">
+          <img src="/static/{{ g.image }}" alt="{{ g.title }}" loading="lazy">
+          <span class="g-cap">{{ g.title }}</span>
+        </button>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head"><h2>What our hosts say afterwards</h2></header>
+    <div class="quotes">
+      {% for t in testimonials %}
+      <blockquote class="quote"><p>{{ t.quote }}</p><footer><strong>{{ t.name }}</strong><span>{{ t.event }}</span></footer></blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap faq-wrap">
+    <div class="faq-head"><h2>Questions we hear most</h2><p>Cannot find your answer? Call {{ biz.phone_1 }} or send an enquiry below.</p></div>
+    <div>
+      {% for f in faqs %}
+      <details class="faq"><summary>{{ f.question }}</summary><p>{{ f.answer }}</p></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section section-dark">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Talk to {{ biz.founder }} and the team</h2>
+      <p>We are in Nakuru town and we answer the phone. Send your details and we will respond the same working day with questions, ideas or a quotation.</p>
+      <dl>
+        <dt>Call or WhatsApp</dt><dd>{{ biz.phone_1 }} &middot; {{ biz.phone_2 }}</dd>
+        <dt>Email</dt><dd>{{ biz.email }}</dd>
+        <dt>Office</dt><dd>{{ biz.address }}</dd>
+        <dt>Opening hours</dt><dd>{{ biz.hours }}<br>Sundays and event days by appointment</dd>
+      </dl>
+      <a class="btn btn-line" href="{{ whatsapp_url }}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <div class="card form-card">
+      <h3>Request a free quotation</h3>
+      {% include "_enquiry_form.html" %}
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="lb-close" aria-label="Close">&times;</button><img alt=""><p></p></div>
+{% endblock %}

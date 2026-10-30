@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{% if user.is_staff %}Enquiries{% else %}My enquiries{% endif %} | Moonshine Events{% endblock %}
+{% block content %}
+<section class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head left">
+      <h2>{% if user.is_staff %}All enquiries{% else %}Hello, {{ user.username }}{% endif %}</h2>
+      <p>{% if user.is_staff %}Newest first. Change the status from the drop-down to keep track of each lead.{% else %}Your requests to Moonshine Events and where each one stands.{% endif %}</p>
+    </header>
+    {% if stats %}
+    <ul class="stat-row">{% for s in stats %}<li><strong>{{ s.n }}</strong>{{ s.label }}</li>{% endfor %}</ul>
+    {% endif %}
+    {% if enquiries.length %}
+    <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>Received</th>{% if user.is_staff %}<th>Name</th><th>Phone</th><th>Details</th>{% endif %}<th>Event</th><th>Date</th><th>Guests</th><th>Catering</th><th>Status</th></tr></thead>
+        <tbody>
+        {% for e in enquiries %}
+          <tr>
+            <td>{{ e.created|dt }}</td>
+            {% if user.is_staff %}<td>{{ e.name }}</td><td>{{ e.phone }}</td><td title="{{ e.message }}">{{ e.email }}{% if e.venue %} · {{ e.venue }}{% endif %}</td>{% endif %}
+            <td>{{ e.event_label }}</td>
+            <td>{{ e.event_date|dt or "Not set" }}</td>
+            <td>{{ e.guests or "Not set" }}</td>
+            <td>{{ e.package_name or "None" }}</td>
+            <td>
+              {% if user.is_staff %}
+              <form method="post" action="/dashboard/enquiries/{{ e.id }}/status/" class="status-form">
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                <select name="status" aria-label="Status for {{ e.name }}">{% for k, l in statuses %}<option value="{{ k }}" {% if e.status == k %}selected{% endif %}>{{ l }}</option>{% endfor %}</select>
+                <button class="btn btn-navy btn-sm" type="submit">Save</button>
+              </form>
+              {% else %}<span class="status s-{{ e.status }}">{{ e.status_label }}</span>{% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="empty">
+      <p>You have not sent an enquiry yet.</p>
+      <a class="btn btn-navy" href="/#contact">Request a free quote</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

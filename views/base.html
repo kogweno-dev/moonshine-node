@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Moonshine Events | Event Planning, Tents, Decor and Catering in Nakuru{% endblock %}</title>
+<meta name="description" content="{% block desc %}Weddings, corporate functions, tents, decor and catering in Nakuru and across Kenya. One team, one quotation.{% endblock %}">
+<meta name="theme-color" content="#0a1428">
+<link rel="icon" href="/static/images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="nav {% block navclass %}{% endblock %}">
+  <div class="wrap nav-in">
+    <a class="brand" href="/">
+      <img src="/static/images/logo.jpg" alt="" width="46" height="46">
+      <span>Moonshine <em>Events</em></span>
+    </a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="menu" aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/catering/" {% if active == 'catering' %}aria-current="page"{% endif %}>Catering</a>
+      <a href="/#gallery">Gallery</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+      <span class="menu-sep" aria-hidden="true"></span>
+      {% if user %}
+        <a href="/dashboard/">My account</a>
+        <form method="post" action="/logout/" class="inline"><input type="hidden" name="_csrf" value="{{ csrfToken }}"><button class="linkbtn">Log out</button></form>
+      {% else %}
+        <a href="/login/">Log in</a>
+      {% endif %}
+      <a href="/#contact" class="btn btn-gold btn-sm">Get a free quote</a>
+    </nav>
+  </div>
+</header>
+
+{% if messages.length %}
+<div class="msgs" role="status"><div class="wrap">
+  {% for m in messages %}<p class="msg msg-{{ m.tags }}">{{ m.text }}</p>{% endfor %}
+</div></div>
+{% endif %}
+
+<main id="main">{% block content %}{% endblock %}</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-about">
+      <a class="brand" href="/"><img src="/static/images/logo.jpg" alt="" width="56" height="56"><span>Moonshine <em>Events</em></span></a>
+      <p>Full-service event planning, tents, decor and catering from Nakuru town, working across Kenya. Founded and led by {{ biz.founder }}.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/#services">Weddings</a></li>
+        <li><a href="/#services">Corporate functions</a></li>
+        <li><a href="/#services">Tents and draping</a></li>
+        <li><a href="/catering/">Catering</a></li>
+        <li><a href="/#services">Celebrations of life</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Your account</h4>
+      <ul>
+        {% if user %}
+          <li><a href="/dashboard/">My enquiries</a></li>
+        {% else %}
+          <li><a href="/login/">Log in</a></li>
+          <li><a href="/signup/">Create an account</a></li>
+        {% endif %}
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>{{ biz.phone_1 }}</li>
+        <li>{{ biz.phone_2 }}</li>
+        <li>{{ biz.email }}</li>
+        <li>{{ biz.address }}</li>
+        <li>{{ biz.hours }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base"><span>&copy; {{ year }} Moonshine Events, Nakuru. All rights reserved.</span></div>
+</footer>
+
+<a class="wa-float" href="{{ whatsapp_url }}" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H9l-5 4V4a1 1 0 0 1 0-1Z"/></svg>
+  <span>WhatsApp us</span>
+</a>
+<script src="/static/js/main.js"></script>
+</body>
+</html>

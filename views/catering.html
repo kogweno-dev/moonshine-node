@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Catering in Nakuru | Moonshine Events{% endblock %}
+{% block desc %}Buffet, plated and cocktail catering for weddings, corporate functions and celebrations in Nakuru and across Kenya.{% endblock %}
+{% block navclass %}nav-over{% endblock %}
+{% block content %}
+
+<section class="hero hero-short">
+  <img class="hero-bg" src="/static/images/head-table-gold.jpg" alt="" fetchpriority="high">
+  <div class="wrap hero-in">
+    <p class="hero-note">Catering and hospitality</p>
+    <h1>Good food, served on time, for every guest</h1>
+    <p class="lead">Kenyan and continental menus for forty guests or a thousand, with cooks, waiting staff, crockery and a bar setup included.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="#book">Book catering</a>
+      <a class="btn btn-line" href="#packages">Compare packages</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head"><h2>Three ways to serve your guests</h2></header>
+    <div class="trio">
+      <div><h3>Buffet</h3><p>Guests serve themselves from a dressed buffet line. Best for large weddings, dowries and field days.</p></div>
+      <div><h3>Plated</h3><p>Courses brought to the table by trained waiters. Best for head tables, galas and formal dinners.</p></div>
+      <div><h3>Cocktail</h3><p>Canapés, drinks and food stations for launches, receptions and evening events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="section">
+  <div class="wrap">
+    <header class="sec-head"><h2>Packages</h2><p>Prices are per guest and start from the figure shown. Final cost depends on your menu, venue and guest count.</p></header>
+    <div class="pkg-grid pkg-light">
+      {% for p in packages %}
+      <article class="pkg {% if p.is_featured %}pkg-featured{% endif %}">
+        {% if p.is_featured %}<span class="tag">Most booked</span>{% endif %}
+        <h3>{{ p.name }}</h3>
+        <p class="pkg-tag">{{ p.tagline }}</p>
+        <p class="price"><small>from KSh</small> {{ p.price_per_guest|money }}<small> per guest</small></p>
+        <p class="min">Minimum {{ p.min_guests }} guests</p>
+        <ul class="ticks">{% for i in p.include_list %}<li>{{ i }}</li>{% endfor %}</ul>
+        <a class="btn {% if p.is_featured %}btn-gold{% else %}btn-navy{% endif %}" href="?package={{ p.id }}#book">Choose {{ p.name }}</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head"><h2>Menu favourites</h2><p>Mix and match inside any package. Dishes marked with a green dot are vegetarian.</p></header>
+    <div class="filters" role="tablist">
+      {% for g in menu %}<button class="chip {% if loop.first %}is-on{% endif %}" role="tab" data-tab="{{ g.key }}">{{ g.label }}</button>{% endfor %}
+    </div>
+    {% for g in menu %}
+    <div class="menu-panel" data-panel="{{ g.key }}" {% if not loop.first %}hidden{% endif %}>
+      <ul class="menu-list">
+        {% for i in g.items %}
+        <li><span class="dot {% if i.is_vegetarian %}veg{% endif %}" aria-hidden="true"></span>
+          <div><strong>{{ i.name }}</strong>{% if i.is_vegetarian %}<span class="sr"> (vegetarian)</span>{% endif %}<span>{{ i.description }}</span></div></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% if gallery.length %}
+<section class="section section-tint">
+  <div class="wrap">
+    <header class="sec-head"><h2>Tables we have set</h2></header>
+    <div class="gallery">
+      {% for g in gallery %}
+      <figure class="g-item"><button class="g-open" data-full="/static/{{ g.image }}" data-cap="{{ g.title }}. {{ g.caption }}" aria-label="View {{ g.title }}"><img src="/static/{{ g.image }}" alt="{{ g.title }}" loading="lazy"><span class="g-cap">{{ g.title }}</span></button></figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="wrap">
+    <header class="sec-head"><h2>How catering works</h2></header>
+    <ol class="timeline">
+      <li><h3>Tell us your numbers</h3><p>Guest count, date, venue and any dietary needs.</p></li>
+      <li><h3>Taste and choose</h3><p>We build a menu and arrange a tasting for larger bookings.</p></li>
+      <li><h3>We cook and set up</h3><p>Kitchen, buffet line, crockery and staff arrive before your guests do.</p></li>
+      <li><h3>Serve and clear</h3><p>Stewards keep food and drinks flowing, then we clear everything.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="book" class="section section-dark">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Get a menu and price</h2>
+      <p>Choose a package or leave it open. We reply with an itemised catering quote, free and with no obligation.</p>
+      <dl>
+        <dt>Call or WhatsApp</dt><dd>{{ biz.phone_1 }} &middot; {{ biz.phone_2 }}</dd>
+        <dt>Email</dt><dd>{{ biz.email }}</dd>
+      </dl>
+      <a class="btn btn-ghost" href="{{ whatsapp_url }}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <div class="card form-card" id="contact">
+      <h3>Catering enquiry</h3>
+      {% include "_enquiry_form.html" %}
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""><p></p></div>
+{% endblock %}

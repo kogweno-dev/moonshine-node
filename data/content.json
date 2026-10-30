@@ -1,0 +1,323 @@
+{
+ "services": [
+  {
+   "title": "Wedding Planning & Styling",
+   "summary": "Full coordination for traditional, church and garden weddings, or day-of management if you have already planned it yourself.",
+   "features": "Budget, timeline and vendor sourcing\nAisle, altar and reception decor\nBridal cars and entourage logistics\nRehearsal and wedding-day coordination",
+   "image": "images/red-aisle.jpg",
+   "cta_label": "Plan a wedding",
+   "link": "#contact"
+  },
+  {
+   "title": "Corporate & Public Functions",
+   "summary": "Launches, AGMs, field days, county and NGO functions, graduations and staff parties, organised to a programme and a budget you can report on.",
+   "features": "VIP and press seating plans\nBranded tents, backdrops and signage\nPA, podium, staging and generator\nUshers, registration and protocol",
+   "image": "images/gold-black-tents.jpg",
+   "cta_label": "Request a proposal",
+   "link": "#contact"
+  },
+  {
+   "title": "Tents, Draping & Decor",
+   "summary": "Our own tents, chairs, tables, carpets and fabric, styled to your colours instead of whatever happens to be in the store.",
+   "features": "Frame and stretch tents of all sizes\nCeiling draping and fabric backdrops\nChairs, tiffany seats, tables and linen\nFloral, lighting and centrepieces",
+   "image": "images/teal-tent.jpg",
+   "cta_label": "Check availability",
+   "link": "#contact"
+  },
+  {
+   "title": "Catering & Hospitality",
+   "summary": "In-house kitchen, trained waiting staff and menus built around your guests, from a plated dinner for forty to a buffet line for a thousand.",
+   "features": "Kenyan, continental and nyama choma menus\nBuffet, plated or cocktail service\nSoft drinks, mocktails and bar setup\nCrockery, cutlery and waiting staff",
+   "image": "images/kente-table.jpg",
+   "cta_label": "See menus and prices",
+   "link": "/catering/"
+  },
+  {
+   "title": "Private Celebrations",
+   "summary": "Baby showers, birthdays, dowry and ruracio ceremonies, anniversaries and graduations, with themed backdrops and balloon installs.",
+   "features": "Themed backdrops and balloon installs\nCake, dessert and gift tables\nGames, MC and entertainment\nPhoto corners guests actually queue for",
+   "image": "images/orange-blue-wedding.jpg",
+   "cta_label": "Book a celebration",
+   "link": "#contact"
+  },
+  {
+   "title": "Celebrations of Life",
+   "summary": "Sensitive, well-run funeral and memorial services, handled quickly and quietly so the family can grieve instead of organise.",
+   "features": "Rapid tent, chair and PA mobilisation\nFloral tributes and tribute boards\nProgramme printing and ushering\nCatering for mourners and vigils",
+   "image": "images/green-balloons.jpg",
+   "cta_label": "Talk to us today",
+   "link": "#contact"
+  }
+ ],
+ "gallery": [
+  {
+   "title": "Garden wedding aisle",
+   "caption": "Red carpet aisle with floral pedestals under a matching tent.",
+   "category": "wedding",
+   "image": "images/red-aisle.jpg"
+  },
+  {
+   "title": "Church entrance arch",
+   "caption": "Red and white rose arch for a church ceremony.",
+   "category": "wedding",
+   "image": "images/flower-arch.jpg"
+  },
+  {
+   "title": "Bridal car",
+   "caption": "Dressed bridal car, timed to the programme.",
+   "category": "wedding",
+   "image": "images/bridal-car.jpg"
+  },
+  {
+   "title": "Gold and black function",
+   "caption": "Branded tenting and head-table service for a public function.",
+   "category": "corporate",
+   "image": "images/gold-black-tents.jpg"
+  },
+  {
+   "title": "Head table in gold",
+   "caption": "VIP head table with gold fringe backdrop and fresh florals.",
+   "category": "corporate",
+   "image": "images/head-table-gold.jpg"
+  },
+  {
+   "title": "Exhibition booth",
+   "caption": "Green, yellow and black draping for a national exhibition stand.",
+   "category": "corporate",
+   "image": "images/exhibition-booth.jpg"
+  },
+  {
+   "title": "Teal and gold draping",
+   "caption": "Ceiling draping and round tables for a formal reception.",
+   "category": "tents",
+   "image": "images/teal-tent.jpg"
+  },
+  {
+   "title": "Red and white reception",
+   "caption": "Lined tents, white tiffany chairs and a red carpet.",
+   "category": "tents",
+   "image": "images/red-tent-chairs.jpg"
+  },
+  {
+   "title": "Red sash chairs",
+   "caption": "Stretch covers with red sashes and sequin table runners.",
+   "category": "tents",
+   "image": "images/red-chairs-sash.jpg"
+  },
+  {
+   "title": "Orange and blue wedding",
+   "caption": "Floral entrance frame and fabric-lined tents in orange and blue.",
+   "category": "celebration",
+   "image": "images/orange-blue-wedding.jpg"
+  },
+  {
+   "title": "Celebration of life",
+   "caption": "Green and yellow balloon garlands with a tribute board.",
+   "category": "celebration",
+   "image": "images/green-balloons.jpg"
+  },
+  {
+   "title": "Yellow and black table",
+   "caption": "Banquet table with yellow sashes, black runner and fresh flowers.",
+   "category": "catering",
+   "image": "images/yellow-tent.jpg"
+  },
+  {
+   "title": "Kente table setting",
+   "caption": "Woven mats, gold cutlery and kente runner.",
+   "category": "catering",
+   "image": "images/kente-table.jpg"
+  },
+  {
+   "title": "Orange banquet setting",
+   "caption": "Folded napkins, crystal glassware and matching sashes.",
+   "category": "catering",
+   "image": "images/orange-table.jpg"
+  },
+  {
+   "title": "Head-table service",
+   "caption": "Drinks station and dressed dining area.",
+   "category": "catering",
+   "image": "images/red-head-table.jpg"
+  }
+ ],
+ "testimonials": [
+  {
+   "name": "Faith & Kevin",
+   "event": "Garden wedding, Njoro",
+   "quote": "Madam Doreen and her team set up the day before and everything was already beautiful by the time we arrived. I actually got to sit down and eat at my own wedding."
+  },
+  {
+   "name": "Programme Officer",
+   "event": "NGO field day, Nakuru County",
+   "quote": "We needed tents, PA and seating for four hundred people with ten days' notice. Moonshine quoted the same day and the setup was clean and professional."
+  },
+  {
+   "name": "The Wanjiru Family",
+   "event": "Celebration of life, Bahati",
+   "quote": "They handled my mother's send-off with so much respect. We were grieving and they simply took over the logistics without us having to ask twice."
+  }
+ ],
+ "faqs": [
+  {
+   "question": "How far in advance should I book?",
+   "answer": "For weddings and large corporate functions, three to six months gives us the most room to negotiate on your behalf. We regularly deliver good events on two or three weeks' notice, and we mobilise funeral and memorial setups within a day or two."
+  },
+  {
+   "question": "Do you travel outside Nakuru?",
+   "answer": "Yes. We work regularly in Naivasha, Njoro, Gilgil, Molo, Eldoret, Nyahururu and Nairobi. Anything beyond Nakuru County carries a transport and logistics line on the quote."
+  },
+  {
+   "question": "Can I hire only tents and chairs, without planning?",
+   "answer": "Absolutely. Equipment hire is available on its own: tents, chairs, tables, linen, carpets, draping and PA."
+  },
+  {
+   "question": "How much does an event cost?",
+   "answer": "It depends on guest numbers, venue and how much decor you want. Tell us your guest count and budget ceiling and we will show you the best possible event within it, itemised line by line."
+  },
+  {
+   "question": "What deposit do you require?",
+   "answer": "A booking deposit secures your date and the equipment for it, with the balance settled before setup. The exact split is written into your quotation."
+  },
+  {
+   "question": "Do you provide catering yourselves?",
+   "answer": "Yes. In-house catering with Kenyan and continental menus, buffet or plated service, waiting staff, crockery and a bar setup. If you already have a caterer you love, we will coordinate with them instead."
+  }
+ ],
+ "packages": [
+  {
+   "name": "Classic Buffet",
+   "tagline": "Honest, generous Kenyan food for everyday celebrations.",
+   "price_per_guest": 850,
+   "min_guests": 50,
+   "includes": "One starter\nTwo mains (one meat, one vegetarian)\nTwo sides and a fresh salad\nSoft drinks and water\nBuffet line, crockery and cutlery\nWaiting staff",
+   "is_featured": 0
+  },
+  {
+   "name": "Signature Feast",
+   "tagline": "Our most-booked menu for weddings, dowries and graduations.",
+   "price_per_guest": 1350,
+   "min_guests": 80,
+   "includes": "Two starters\nThree mains including nyama choma\nThree sides and two salads\nDessert and fruit platter\nSoft drinks, juices and a mocktail\nBuffet or plated service\nWaiting staff and a stewarded cake table",
+   "is_featured": 1
+  },
+  {
+   "name": "Grand Occasion",
+   "tagline": "Plated, multi-course service for the days that need to be perfect.",
+   "price_per_guest": 2200,
+   "min_guests": 100,
+   "includes": "Welcome drinks and canapés\nThree-course plated dinner\nLive carving station\nDessert table and cake service\nFull bar setup with bartender\nHead-table service\nCaterer, head waiter and trained stewards",
+   "is_featured": 0
+  }
+ ],
+ "menu": [
+  {
+   "category": "starters",
+   "name": "Beef and vegetable samosas",
+   "description": "Crisp pastry, served warm with chilli dip.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "starters",
+   "name": "Chicken wings",
+   "description": "Grilled and glazed, passed around at cocktail hour.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "starters",
+   "name": "Soup of the day",
+   "description": "Butternut, tomato or chicken broth.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "mains",
+   "name": "Nyama choma",
+   "description": "Goat or beef roasted over charcoal, with kachumbari.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "mains",
+   "name": "Pilau",
+   "description": "Spiced rice slow-cooked with beef.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "mains",
+   "name": "Chicken stew",
+   "description": "Tomato and herb base, served on the bone.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "mains",
+   "name": "Beef stew",
+   "description": "Slow-simmered with carrots and potatoes.",
+   "is_vegetarian": 0
+  },
+  {
+   "category": "mains",
+   "name": "Vegetable curry",
+   "description": "Coconut-based, with chickpeas and seasonal vegetables.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "sides",
+   "name": "Chapati",
+   "description": "Soft, layered and freshly cooked.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "sides",
+   "name": "Ugali and mukimo",
+   "description": "Maize meal and mashed greens with potato.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "sides",
+   "name": "Sukuma wiki",
+   "description": "Sautéed collard greens.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "sides",
+   "name": "Kachumbari and garden salad",
+   "description": "Tomato, onion and coriander; mixed leaves.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "desserts",
+   "name": "Fruit platter",
+   "description": "Seasonal fruit, cut and arranged.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "desserts",
+   "name": "Cake table service",
+   "description": "We cut, plate and serve your cake to guests.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "desserts",
+   "name": "Mandazi and pastries",
+   "description": "Light, golden and not too sweet.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "drinks",
+   "name": "Soft drinks and bottled water",
+   "description": "Served chilled.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "drinks",
+   "name": "Fresh juice and mocktails",
+   "description": "Passion, mango, and a signature mocktail.",
+   "is_vegetarian": 1
+  },
+  {
+   "category": "drinks",
+   "name": "Tea and coffee station",
+   "description": "Kenyan chai and filter coffee.",
+   "is_vegetarian": 1
+  }
+ ]
+}

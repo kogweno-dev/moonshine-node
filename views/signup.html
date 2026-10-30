@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Create an account | Moonshine Events{% endblock %}
+{% block content %}
+<section class="section section-tint auth">
+  <div class="wrap">
+    <div class="card auth-card">
+      <h2>Create an account</h2>
+      <p>Track your enquiries and quotations in one place.</p>
+      <form method="post" action="/signup/" class="form" novalidate>
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <div class="field"><label for="id_username">Username</label><input id="id_username" name="username" value="{{ form.values.username }}" autocomplete="username" required>{% if form.errors.username %}<span class="err">{{ form.errors.username }}</span>{% endif %}</div>
+        <div class="field"><label for="id_email">Email address</label><input id="id_email" type="email" name="email" value="{{ form.values.email }}" autocomplete="email" required>{% if form.errors.email %}<span class="err">{{ form.errors.email }}</span>{% endif %}</div>
+        <div class="field"><label for="id_password1">Password</label><input id="id_password1" type="password" name="password1" autocomplete="new-password" required><span class="hint">At least 8 characters, and not only numbers.</span>{% if form.errors.password1 %}<span class="err">{{ form.errors.password1 }}</span>{% endif %}</div>
+        <div class="field"><label for="id_password2">Confirm password</label><input id="id_password2" type="password" name="password2" autocomplete="new-password" required>{% if form.errors.password2 %}<span class="err">{{ form.errors.password2 }}</span>{% endif %}</div>
+        <button class="btn btn-navy" type="submit">Create account</button>
+      </form>
+      <p class="fine">Already registered? <a class="textlink" href="/login/">Log in</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

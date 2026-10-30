@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Log in | Moonshine Events{% endblock %}
+{% block content %}
+<section class="section section-tint auth">
+  <div class="wrap">
+    <div class="card auth-card">
+      <h2>Log in</h2>
+      <p>See the status of your enquiries and send new ones faster.</p>
+      <form method="post" action="/login/" class="form">
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <input type="hidden" name="next" value="{{ next }}">
+        {% if error %}<p class="msg msg-error">{{ error }}</p>{% endif %}
+        <div class="field"><label for="id_username">Username</label><input id="id_username" name="username" value="{{ values.username }}" autocomplete="username" required autofocus></div>
+        <div class="field"><label for="id_password">Password</label><input id="id_password" type="password" name="password" autocomplete="current-password" required></div>
+        <button class="btn btn-navy" type="submit">Log in</button>
+      </form>
+      <p class="fine">New here? <a class="textlink" href="/signup/">Create an account</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

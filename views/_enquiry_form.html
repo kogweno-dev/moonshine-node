@@ -1,0 +1,20 @@
+<form method="post" class="form" novalidate>
+  <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+  <input type="hidden" name="form_name" value="enquiry">
+  <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  {% if form.hasErrors %}<p class="msg msg-error">Please check the fields marked below.</p>{% endif %}
+  <div class="grid-2">
+    <div class="field"><label for="id_name">Full name *</label><input id="id_name" type="text" name="name" value="{{ form.values.name }}" autocomplete="name">{% if form.errors.name %}<span class="err">{{ form.errors.name }}</span>{% endif %}</div>
+    <div class="field"><label for="id_phone">Phone / WhatsApp *</label><input id="id_phone" type="tel" name="phone" value="{{ form.values.phone }}" autocomplete="tel" placeholder="07xx xxx xxx">{% if form.errors.phone %}<span class="err">{{ form.errors.phone }}</span>{% endif %}</div>
+    <div class="field"><label for="id_email">Email address</label><input id="id_email" type="email" name="email" value="{{ form.values.email }}" autocomplete="email">{% if form.errors.email %}<span class="err">{{ form.errors.email }}</span>{% endif %}</div>
+    <div class="field"><label for="id_event_type">Type of event *</label><select id="id_event_type" name="event_type">{% for k, l in event_types %}<option value="{{ k }}" {% if form.values.event_type == k %}selected{% endif %}>{{ l }}</option>{% endfor %}</select>{% if form.errors.event_type %}<span class="err">{{ form.errors.event_type }}</span>{% endif %}</div>
+    <div class="field"><label for="id_event_date">Preferred date</label><input id="id_event_date" type="date" name="event_date" value="{{ form.values.event_date }}" >{% if form.errors.event_date %}<span class="err">{{ form.errors.event_date }}</span>{% endif %}</div>
+    <div class="field"><label for="id_guests">Expected guests</label><input id="id_guests" type="number" name="guests" value="{{ form.values.guests }}" min="1" placeholder="e.g. 200">{% if form.errors.guests %}<span class="err">{{ form.errors.guests }}</span>{% endif %}</div>
+    <div class="field"><label for="id_budget">Budget range (KSh)</label><select id="id_budget" name="budget">{% for k, l in budgets %}<option value="{{ k }}" {% if form.values.budget == k %}selected{% endif %}>{{ l }}</option>{% endfor %}</select>{% if form.errors.budget %}<span class="err">{{ form.errors.budget }}</span>{% endif %}</div>
+    <div class="field"><label for="id_venue">Venue or town</label><input id="id_venue" type="text" name="venue" value="{{ form.values.venue }}" >{% if form.errors.venue %}<span class="err">{{ form.errors.venue }}</span>{% endif %}</div>
+    <div class="field full"><label for="id_package_id">Catering package</label><select id="id_package_id" name="package_id"><option value="">No catering / not sure yet</option>{% for p in packages %}<option value="{{ p.id }}" {% if form.values.package_id == p.id|string %}selected{% endif %}>{{ p.name }}</option>{% endfor %}</select>{% if form.errors.package_id %}<span class="err">{{ form.errors.package_id }}</span>{% endif %}</div>
+    <div class="field full"><label for="id_message">Tell us about your event</label><textarea id="id_message" name="message" rows="4" placeholder="Theme, colours, menu ideas, anything we should know">{{ form.values.message }}</textarea>{% if form.errors.message %}<span class="err">{{ form.errors.message }}</span>{% endif %}</div>
+  </div>
+  <button class="btn btn-gold" type="submit">Send my enquiry</button>
+  <p class="fine">We reply the same working day. Your details are used only to prepare your quotation.</p>
+</form>

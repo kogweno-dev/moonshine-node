@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} | Moonshine Events{% endblock %}
+{% block content %}
+<section class="section section-tint auth">
+  <div class="wrap">
+    <div class="card auth-card" style="text-align:center">
+      <h2>{{ code }}</h2>
+      <p>{{ message }}</p>
+      <a class="btn btn-navy" href="/">Back to the home page</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
